@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CC71A88B-FB1E-409F-8106-DB75D6B40B87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Protocol.Generated", "src\Shine.Protocol.Generated\Shine.Protocol.Generated.csproj", "{5899E516-B7AF-4FCD-9F78-230DEF3774BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Streaming", "src\Shine.Streaming\Shine.Streaming.csproj", "{5B0E734C-B838-4381-AF38-EEACF8D61025}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Receiver", "src\Shine.Receiver\Shine.Receiver.csproj", "{68C4EEA1-8B1F-4C40-92C5-0F2AE51F9383}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5899E516-B7AF-4FCD-9F78-230DEF3774BA} = {CC71A88B-FB1E-409F-8106-DB75D6B40B87}
+		{5B0E734C-B838-4381-AF38-EEACF8D61025} = {CC71A88B-FB1E-409F-8106-DB75D6B40B87}
+		{68C4EEA1-8B1F-4C40-92C5-0F2AE51F9383} = {CC71A88B-FB1E-409F-8106-DB75D6B40B87}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5899E516-B7AF-4FCD-9F78-230DEF3774BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5899E516-B7AF-4FCD-9F78-230DEF3774BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5899E516-B7AF-4FCD-9F78-230DEF3774BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5899E516-B7AF-4FCD-9F78-230DEF3774BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B0E734C-B838-4381-AF38-EEACF8D61025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B0E734C-B838-4381-AF38-EEACF8D61025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B0E734C-B838-4381-AF38-EEACF8D61025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B0E734C-B838-4381-AF38-EEACF8D61025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C4EEA1-8B1F-4C40-92C5-0F2AE51F9383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C4EEA1-8B1F-4C40-92C5-0F2AE51F9383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C4EEA1-8B1F-4C40-92C5-0F2AE51F9383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C4EEA1-8B1F-4C40-92C5-0F2AE51F9383}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
