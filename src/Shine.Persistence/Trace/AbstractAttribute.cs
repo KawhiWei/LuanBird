@@ -1,7 +1,7 @@
 using Luck.DDD.Domain.Domain.Entities;
 using Shine.Domain.Shared.Enums;
 
-namespace Shine.Domain.AggregateRoots.Trace;
+namespace Shine.Persistence.Trace;
 
 public abstract class AbstractAttribute(string key, AttributeValueType valueType, string value) : FullEntity
 {

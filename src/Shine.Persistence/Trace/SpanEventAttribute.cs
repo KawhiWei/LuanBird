@@ -1,8 +1,8 @@
 using Shine.Domain.Shared.Enums;
 
-namespace Shine.Domain.AggregateRoots.Trace;
+namespace Shine.Persistence.Trace;
 
-public class ShineSpanEventAttribute(string key, AttributeValueType valueType, string value, string traceId, string spanId, int spanEventIndex) : AbstractAttribute(key, valueType, value)
+public class SpanEventAttribute(string key, AttributeValueType valueType, string value, string traceId, string spanId, int spanEventIndex) : AbstractAttribute(key, valueType, value)
 {
     public required string TraceId { get; init; } = traceId;
 

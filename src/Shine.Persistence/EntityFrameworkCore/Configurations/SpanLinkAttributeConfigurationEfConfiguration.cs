@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Shine.Domain.AggregateRoots.Trace;
+using Shine.Persistence.Trace;
 
-namespace Shine.Persistence.Configurations;
+namespace Shine.Persistence.EntityFrameworkCore.Configurations;
 
-public class ShineSpanLinkAttributeConfigurationEfConfiguration : IEntityTypeConfiguration<ShineSpanLinkAttribute>
+public class SpanLinkAttributeConfigurationEfConfiguration : IEntityTypeConfiguration<SpanLinkAttribute>
 {
-    public void Configure(EntityTypeBuilder<ShineSpanLinkAttribute> builder)
+    public void Configure(EntityTypeBuilder<SpanLinkAttribute> builder)
     {
         builder.ToTable("span_link_attribute");
         builder.HasKey(e => e.Id);

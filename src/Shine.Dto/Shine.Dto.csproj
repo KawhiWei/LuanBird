@@ -5,15 +5,9 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-    <ItemGroup>
-        <PackageReference Include="Luck.DDD.Domain" Version="2.0.3" />
-    </ItemGroup>
+
     <ItemGroup>
       <ProjectReference Include="..\Shine.Domain.Shared\Shine.Domain.Shared.csproj" />
-      <ProjectReference Include="..\Shine.Dto\Shine.Dto.csproj" />
     </ItemGroup>
-    <ItemGroup>
-      <Folder Include="AggregateRoots\" />
-      <Folder Include="Repositories\" />
-    </ItemGroup>
+
 </Project>

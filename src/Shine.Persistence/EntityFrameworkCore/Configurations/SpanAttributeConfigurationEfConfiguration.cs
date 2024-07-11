@@ -1,18 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Shine.Domain.AggregateRoots.Trace;
+using Shine.Persistence.Trace;
 
-namespace Shine.Persistence.Configurations;
+namespace Shine.Persistence.EntityFrameworkCore.Configurations;
 
-public class ShineSpanEventAttributeConfigurationEfConfiguration : IEntityTypeConfiguration<ShineSpanEventAttribute>
+public class SpanAttributeConfigurationEfConfiguration : IEntityTypeConfiguration<SpanAttribute>
 {
-    public void Configure(EntityTypeBuilder<ShineSpanEventAttribute> builder)
+    public void Configure(EntityTypeBuilder<SpanAttribute> builder)
     {
-        builder.ToTable("span_event_attribute");
+        builder.ToTable("span_attribute");
         builder.HasKey(e => e.Id);
         builder.Property(x => x.Id).HasColumnName("id");
         builder.Property(x => x.TraceId).HasColumnName("trace_id").IsRequired();
-        builder.Property(x => x.SpanEventIndex).HasColumnName("span_event_index").IsRequired();
         builder.Property(x => x.SpanId).HasColumnName("span_id").IsRequired();
         builder.Property(x => x.Key).HasColumnName("key").IsRequired();
         builder.Property(x => x.ValueType).HasColumnName("value_type").IsRequired();

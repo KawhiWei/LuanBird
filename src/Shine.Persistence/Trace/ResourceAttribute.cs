@@ -1,8 +1,8 @@
 using Shine.Domain.Shared.Enums;
 
-namespace Shine.Domain.AggregateRoots.Trace;
+namespace Shine.Persistence.Trace;
 
-public class ShineResourceAttribute(
+public class ResourceAttribute(
     string key,
     AttributeValueType valueType,
     string value,

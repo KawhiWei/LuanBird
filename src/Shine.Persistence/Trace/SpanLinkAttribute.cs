@@ -1,8 +1,8 @@
 using Shine.Domain.Shared.Enums;
 
-namespace Shine.Domain.AggregateRoots.Trace;
+namespace Shine.Persistence.Trace;
 
-public class ShineSpanLinkAttribute(
+public class SpanLinkAttribute(
     string key,
     AttributeValueType valueType,
     string value,

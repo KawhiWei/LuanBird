@@ -1,8 +1,8 @@
 using Luck.DDD.Domain.Domain.Entities;
 
-namespace Shine.Domain.AggregateRoots.Trace;
+namespace Shine.Persistence.Trace;
 
-public class ShineSpanLink(
+public class SpanLink(
     string traceId,
     string spanId,
     int index,

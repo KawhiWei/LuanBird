@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Shine.Domain.AggregateRoots.Trace;
+using Shine.Persistence.Trace;
 
-namespace Shine.Persistence.Configurations;
+namespace Shine.Persistence.EntityFrameworkCore.Configurations;
 
-public class ShineResourceAttributeConfigurationEfConfiguration : IEntityTypeConfiguration<ShineResourceAttribute>
+public class ResourceAttributeConfigurationEfConfiguration : IEntityTypeConfiguration<ResourceAttribute>
 {
-    public void Configure(EntityTypeBuilder<ShineResourceAttribute> builder)
+    public void Configure(EntityTypeBuilder<ResourceAttribute> builder)
     {
         builder.ToTable("resource_attribute");
         builder.HasKey(e => e.Id);

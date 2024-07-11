@@ -11,4 +11,9 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Shine.Domain\Shine.Domain.csproj" />
+      <ProjectReference Include="..\Shine.Protocol.Generated\Shine.Protocol.Generated.csproj" />
+    </ItemGroup>
+
 </Project>

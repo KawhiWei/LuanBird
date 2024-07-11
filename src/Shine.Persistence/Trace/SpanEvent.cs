@@ -1,8 +1,8 @@
 using Luck.DDD.Domain.Domain.Entities;
 
-namespace Shine.Domain.AggregateRoots.Trace;
+namespace Shine.Persistence.Trace;
 
-public class ShineSpanEvent(string traceId, string spanId, int index, string name, ulong timestampUnixNano)
+public class SpanEvent(string traceId, string spanId, int index, string name, ulong timestampUnixNano)
     : FullEntity
 {
     public required string TraceId { get; init; } = traceId;
