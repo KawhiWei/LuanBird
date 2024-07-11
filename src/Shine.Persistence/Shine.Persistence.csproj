@@ -5,5 +5,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Luck.EntityFrameworkCore" Version="2.0.3" />
+        <PackageReference Include="Luck.EntityFrameworkCore.PostgreSQL" Version="2.0.2" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Shine.Domain\Shine.Domain.csproj" />
+    </ItemGroup>
 
 </Project>

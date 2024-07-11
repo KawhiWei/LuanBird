@@ -11,4 +11,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Shine.Domain.Shared\Shine.Domain.Shared.csproj" />
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Repositories\" />
+    </ItemGroup>
 </Project>

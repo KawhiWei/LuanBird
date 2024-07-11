@@ -25,6 +25,9 @@ CREATE TABLE IF NOT EXISTS span
     span_kind INT NOT NULL  CHECK (span_kind >= 0),
     trace_flags INT NOT NULL CHECK (trace_flags >= 0),
     trace_state VARCHAR(1024),
+    creation_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    last_modification_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    deletion_time TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );
 
 CREATE INDEX idx_shine_monitoring_span_span_id on span (span_id);
