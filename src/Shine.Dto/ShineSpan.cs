@@ -23,12 +23,16 @@ public class ShineSpan
     public string? StatusMessage { get; init; }
 
     public SpanKind SpanKind { get; init; }
-
-    public required string ServiceName { get; init; }
-
-    public required string ServiceInstanceId { get; init; }
-
+    
+    public required ShineResource Resource { get; init; }
     public uint TraceFlags { get; init; }
 
     public string? TraceState { get; init; }
+    
+    public required IEnumerable<ShineSpanLink> Links { get; init; }
+
+    public required IEnumerable<ShineAttribute> Attributes { get; init; }
+
+    public required IEnumerable<ShineSpanEvent> Events { get; init; }
+    
 }

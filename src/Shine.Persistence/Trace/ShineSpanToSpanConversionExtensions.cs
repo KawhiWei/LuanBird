@@ -18,8 +18,8 @@ internal static class ShineSpanToSpanConversionExtensions
             shineSpan.StatusCode,
             shineSpan.StatusMessage,
             shineSpan.SpanKind,
-            shineSpan.ServiceName,
-            shineSpan.ServiceInstanceId,
+            shineSpan.Resource.ServiceName,
+            shineSpan.Resource.ServiceInstanceId,
             shineSpan.TraceFlags,
             shineSpan.TraceState
         )

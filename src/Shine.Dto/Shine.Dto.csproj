@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Shine.Domain.Shared\Shine.Domain.Shared.csproj" />
+      <ProjectReference Include="..\Shine.Protocol.Generated\Shine.Protocol.Generated.csproj" />
     </ItemGroup>
 
 </Project>
