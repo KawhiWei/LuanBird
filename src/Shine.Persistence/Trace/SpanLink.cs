@@ -2,27 +2,19 @@ using Luck.DDD.Domain.Domain.Entities;
 
 namespace Shine.Persistence.Trace;
 
-public class SpanLink(
-    string traceId,
-    string spanId,
-    int index,
-    string linkedTraceId,
-    string linkedSpanId,
-    string linkedTraceState,
-    int linkedTraceFlags)
-    : FullEntity
+public class SpanLink : FullEntity
 {
-    public required string TraceId { get; init; } = traceId;
+    public required string TraceId { get; init; } 
 
-    public required string SpanId { get; init; } = spanId;
+    public required string SpanId { get; init; } 
 
-    public required int Index { get; init; } = index;
+    public required int Index { get; init; } 
 
-    public required string LinkedTraceId { get; init; } = linkedTraceId;
+    public required string LinkedTraceId { get; init; }
 
-    public required string LinkedSpanId { get; init; } = linkedSpanId;
+    public required string LinkedSpanId { get; init; } 
 
-    public required string LinkedTraceState { get; init; } = linkedTraceState;
+    public required string LinkedTraceState { get; init; }
 
-    public required int LinkedTraceFlags { get; init; } = linkedTraceFlags;
+    public required uint LinkedTraceFlags { get; init; }
 }

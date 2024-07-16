@@ -4,8 +4,9 @@ using OpenTelemetry.Proto.Common.V1;
 using OpenTelemetry.Proto.Resource.V1;
 using OpenTelemetry.Proto.Trace.V1;
 using Shine.Domain.Shared.Enums;
+using Shine.Dto;
 
-namespace Shine.Dto.Extensions;
+namespace Shine.Receiver.Extensions;
 
 public static class OTelToShineSpanConversionExtensions
 {
@@ -15,9 +16,9 @@ public static class OTelToShineSpanConversionExtensions
         var spanId = ConvertByteStringToSpanId(span.SpanId);
         var parentSpanId = ConvertByteStringToSpanId(span.ParentSpanId);
         // TODO: no span link found from request
-        var spanLinks = span.Links.Select(link => link.ToShineSpanLink()).ToList();
-        var spanEvents = span.Events.Select(@event => @event.ToShineSpanEvent()).ToList();
-        var attributes =
+        var shineSpanLinks = span.Links.Select(link => link.ToShineSpanLink()).ToList();
+        var shineSpanEvents = span.Events.Select(@event => @event.ToShineSpanEvent()).ToList();
+        var shineAttributes =
             span.Attributes.Select(attribute => attribute.ToShineAttribute()).ToList();
         var serviceName = resource.Attributes
             .FirstOrDefault(attribute => attribute.Key == "service.name")?
@@ -26,7 +27,7 @@ public static class OTelToShineSpanConversionExtensions
             .FirstOrDefault(attribute => attribute.Key == "service.instance.id")?
             .Value?.StringValue ?? string.Empty;
 
-        var mochaSpan = new ShineSpan
+        var shineSpan = new ShineSpan
         {
             SpanId = spanId,
             TraceFlags = span.Flags,
@@ -40,9 +41,9 @@ public static class OTelToShineSpanConversionExtensions
             StatusMessage = span.Status?.Message,
             SpanKind = (SpanKind)span.Kind,
             TraceState = span.TraceState,
-            Attributes = attributes,
-            Events = spanEvents,
-            Links = spanLinks,
+            Attributes = shineAttributes,
+            Events = shineSpanEvents,
+            Links = shineSpanLinks,
             Resource = new ShineResource
             {
                 ServiceName = serviceName,
@@ -51,7 +52,7 @@ public static class OTelToShineSpanConversionExtensions
             }
         };
 
-        return mochaSpan;
+        return shineSpan;
     }
 
     private static ShineSpanLink ToShineSpanLink(this Span.Types.Link link)

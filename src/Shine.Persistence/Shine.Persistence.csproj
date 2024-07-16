@@ -12,8 +12,5 @@
     <ItemGroup>
       <ProjectReference Include="..\Shine.Domain\Shine.Domain.csproj" />
     </ItemGroup>
-    <ItemGroup>
-      <Folder Include="EntityFrameworkCore\" />
-    </ItemGroup>
 
 </Project>

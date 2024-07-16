@@ -3,11 +3,11 @@ using Shine.Domain.Shared.Enums;
 
 namespace Shine.Persistence.Trace;
 
-public abstract class AbstractAttribute(string key, AttributeValueType valueType, string value) : FullEntity
+public abstract class AbstractAttribute() : FullEntity
 {
-    public required string Key { get; init; } = key;
+    public required string Key { get; init; } 
 
-    public required AttributeValueType ValueType { get; init; } = valueType;
+    public required AttributeValueType ValueType { get; init; } 
 
-    public required string Value { get; init; } = value;
+    public required string Value { get; init; } 
 }

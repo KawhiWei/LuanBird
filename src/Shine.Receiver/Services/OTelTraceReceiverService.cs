@@ -1,6 +1,6 @@
 using Grpc.Core;
 using OpenTelemetry.Proto.Collector.Trace.V1;
-using Shine.Dto.Extensions;
+using Shine.Receiver.Extensions;
 
 namespace Shine.Receiver.Services;
 

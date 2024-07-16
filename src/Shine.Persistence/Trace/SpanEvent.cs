@@ -2,16 +2,16 @@ using Luck.DDD.Domain.Domain.Entities;
 
 namespace Shine.Persistence.Trace;
 
-public class SpanEvent(string traceId, string spanId, int index, string name, ulong timestampUnixNano)
+public class SpanEvent()
     : FullEntity
 {
-    public required string TraceId { get; init; } = traceId;
+    public required string TraceId { get; init; }
 
-    public required string SpanId { get; init; } = spanId;
+    public required string SpanId { get; init; }
 
-    public required  int Index { get; init; } = index;
+    public required  int Index { get; init; }
 
-    public required string Name { get; init; } = name;
+    public required string Name { get; init; }
 
-    public required  ulong TimestampUnixNano { get; init; } = timestampUnixNano;
+    public required  ulong TimestampUnixNano { get; init; }
 }
