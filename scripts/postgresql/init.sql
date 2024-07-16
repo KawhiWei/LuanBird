@@ -40,9 +40,9 @@ CREATE TABLE IF NOT EXISTS span_attribute
     id VARCHAR(50) NOT NULL PRIMARY KEY,
     trace_id VARCHAR(255) NOT NULL,
     span_id VARCHAR(255) NOT NULL,
-    `key` VARCHAR(255) NOT NULL,
+    key VARCHAR(255) NOT NULL,
     value_type INT NOT NULL  CHECK (value_type >= 0),
-    `value` VARCHAR(255) NOT NULL,
+    value VARCHAR(255) NOT NULL
     );
 
 CREATE INDEX idx_shine_monitoring_span_attribute_span_id on span_attribute (span_id);
@@ -55,9 +55,9 @@ CREATE TABLE IF NOT EXISTS resource_attribute
     id VARCHAR(50) NOT NULL PRIMARY KEY,
     trace_id VARCHAR(255) NOT NULL,
     span_id VARCHAR(255) NOT NULL,
-    `key` VARCHAR(255) NOT NULL,
+    key VARCHAR(255) NOT NULL,
     value_type INT NOT NULL  CHECK (value_type >= 0),
-    `value` VARCHAR(255) NOT NULL,
+    value VARCHAR(255) NOT NULL
     );
 
 CREATE INDEX idx_shine_monitoring_resource_attribute_span_id on resource_attribute (span_id);
@@ -70,9 +70,9 @@ CREATE TABLE IF NOT EXISTS span_event
     id VARCHAR(50) NOT NULL PRIMARY KEY,
     trace_id VARCHAR(255) NOT NULL,
     span_id VARCHAR(255) NOT NULL,
-    `index` int NOT NULL CHECK (`index` >= 0),
-    `name` VARCHAR(255) NOT NULL,
-    timestamp_unix_nano BIGINT NOT NULL CHECK (timestamp_unix_nano >= 0),
+    index int NOT NULL CHECK (index>= 0),
+    name VARCHAR(255) NOT NULL,
+    timestamp_unix_nano BIGINT NOT NULL CHECK (timestamp_unix_nano >= 0)
     );
 
 CREATE INDEX idx_shine_monitoring_span_event_span_id on span_event (span_id);
@@ -86,9 +86,9 @@ CREATE TABLE IF NOT EXISTS span_event_attribute
     trace_id VARCHAR(255) NOT NULL,
     span_event_index int NOT NULL CHECK (span_event_index >= 0),
     span_id VARCHAR(255) NOT NULL,
-    `key` VARCHAR(255) NOT NULL,
+    key VARCHAR(255) NOT NULL,
     value_type INT NOT NULL  CHECK (value_type >= 0),
-    `value` VARCHAR(255) NOT NULL,
+    value VARCHAR(255) NOT NULL
     );
 
 CREATE INDEX idx_shine_monitoring_span_event_attribute_span_id on span_event_attribute (span_id);
@@ -101,11 +101,11 @@ CREATE TABLE IF NOT EXISTS span_link
     id VARCHAR(50) NOT NULL PRIMARY KEY,
     trace_id VARCHAR(255) NOT NULL,
     span_id VARCHAR(255) NOT NULL,
-    `index` int NOT NULL CHECK (`index` >= 0),
+    index int NOT NULL CHECK (index >= 0),
     linked_trace_id VARCHAR(255) NOT NULL,
     linked_span_id VARCHAR(255) NOT NULL,
     linked_trace_state VARCHAR(1024),
-    linked_trace_flags INT CHECK (linked_trace_flags >= 0),
+    linked_trace_flags INT CHECK (linked_trace_flags >= 0)
     );
 
 CREATE INDEX idx_shine_monitoring_span_link_span_id on span_link (span_id);
@@ -119,10 +119,11 @@ CREATE TABLE IF NOT EXISTS span_link_attribute
     trace_id VARCHAR(255) NOT NULL,
     span_link_index int NOT NULL CHECK (span_link_index >= 0),
     span_id VARCHAR(255) NOT NULL,
-    `key` VARCHAR(255) NOT NULL,
+    key VARCHAR(255) NOT NULL,
     value_type INT NOT NULL  CHECK (value_type >= 0),
-    `value` VARCHAR(255) NOT NULL,
+    value VARCHAR(255) NOT NULL
     );
 
 CREATE INDEX idx_shine_monitoring_span_link_attribute_span_id on span_link_attribute (span_id);
 CREATE INDEX idx_shine_monitoring_span_link_attribute_trace_id on span_link_attribute (trace_id);
+--#endregion
