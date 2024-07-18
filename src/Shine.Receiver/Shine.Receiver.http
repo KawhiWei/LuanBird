@@ -1,6 +1,0 @@
-@Shine.Receiver_HostAddress = http://localhost:5099
-
-GET {{Shine.Receiver_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
