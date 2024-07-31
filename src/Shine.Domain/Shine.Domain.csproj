@@ -6,8 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Google.Protobuf" Version="3.27.1" />
-        <PackageReference Include="Luck.DDD.Domain" Version="2.0.3" />
+        <PackageReference Include="Google.Protobuf" Version="3.27.2" />
+        <PackageReference Include="Luck.DDD.Domain" Version="2.0.5" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Shine.Domain.Shared\Shine.Domain.Shared.csproj" />
