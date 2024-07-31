@@ -1,13 +1,13 @@
 using System.Reflection;
 using Luck.EntityFrameworkCore.DbContexts;
 using Microsoft.EntityFrameworkCore;
-using Shine.Persistence.Trace;
+using Shine.Domain.AggregateRoots.Trace;
 
 namespace Shine.Persistence;
 
 public class ShineContext : LuckDbContextBase
 {
-    public ShineContext(DbContextOptions options, IServiceProvider serviceProvider) : base(options, serviceProvider)
+    public ShineContext(DbContextOptions options, IServiceProvider serviceProvider) : base(options)
     {
     }
 

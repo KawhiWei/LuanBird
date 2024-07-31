@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Shine.Persistence.Trace;
+using Shine.Domain.AggregateRoots.Trace;
 
 namespace Shine.Persistence.EntityFrameworkCore.Configurations;
 

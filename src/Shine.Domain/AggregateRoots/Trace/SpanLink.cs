@@ -1,6 +1,6 @@
 using Luck.DDD.Domain.Domain.Entities;
 
-namespace Shine.Persistence.Trace;
+namespace Shine.Domain.AggregateRoots.Trace;
 
 public class SpanLink : FullEntity
 {

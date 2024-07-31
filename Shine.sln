@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Domain.Shared", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Dto", "src\Shine.Dto\Shine.Dto.csproj", "{C6791E36-818B-4B57-BD53-57BD71997ED7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Persistence.Tests", "tests\Shine.Persistence.Tests\Shine.Persistence.Tests.csproj", "{1D2A092A-2CAA-43D6-AC3F-A92628419390}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A13FEAE8-D422-4570-AD04-C8C67C6A7CB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,7 @@ Global
 		{C2D397AD-FE2D-4B2A-A0CD-3B3AA2EACDDA} = {CC71A88B-FB1E-409F-8106-DB75D6B40B87}
 		{640ED676-BB90-42AD-AFB8-61CAB7C530C5} = {CC71A88B-FB1E-409F-8106-DB75D6B40B87}
 		{C6791E36-818B-4B57-BD53-57BD71997ED7} = {CC71A88B-FB1E-409F-8106-DB75D6B40B87}
+		{1D2A092A-2CAA-43D6-AC3F-A92628419390} = {A13FEAE8-D422-4570-AD04-C8C67C6A7CB9}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5899E516-B7AF-4FCD-9F78-230DEF3774BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -74,5 +79,9 @@ Global
 		{C6791E36-818B-4B57-BD53-57BD71997ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6791E36-818B-4B57-BD53-57BD71997ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6791E36-818B-4B57-BD53-57BD71997ED7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D2A092A-2CAA-43D6-AC3F-A92628419390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D2A092A-2CAA-43D6-AC3F-A92628419390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D2A092A-2CAA-43D6-AC3F-A92628419390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D2A092A-2CAA-43D6-AC3F-A92628419390}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
