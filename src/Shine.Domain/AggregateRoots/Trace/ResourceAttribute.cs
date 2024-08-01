@@ -14,6 +14,5 @@ public class ResourceAttribute : AbstractAttribute
     public string TraceId { get; init; }
 
     public string SpanId { get; init; }
-
     
 }

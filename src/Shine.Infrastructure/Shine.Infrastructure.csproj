@@ -6,9 +6,12 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Luck.AutoDependencyInjection" Version="2.0.5" />
-        <PackageReference Include="Luck.Framework" Version="2.0.5" />
-        <PackageReference Include="Luck.AppModule" Version="2.0.5" />
+        <PackageReference Include="Luck.AutoDependencyInjection" Version="2.0.7" />
+        <PackageReference Include="Luck.Framework" Version="2.0.7" />
+        <PackageReference Include="Luck.AppModule" Version="2.0.7" />
         <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
+        <PackageReference Include="Luck.AppModule" Version="2.0.5" />
+        <PackageReference Include="Luck.Framework" Version="2.0.5" />
+        <PackageReference Include="Luck.AutoDependencyInjection" Version="2.0.5" />
     </ItemGroup>
 </Project>

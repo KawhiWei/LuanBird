@@ -19,5 +19,8 @@ public class SpanEventConfigurationEfConfiguration : IEntityTypeConfiguration<Sp
         builder.Property(x => x.CreationTime).HasColumnName("creation_time");
         builder.Property(x => x.LastModificationTime).HasColumnName("last_modification_time");
         builder.Property(x => x.DeletionTime).HasColumnName("deletion_time");
+        builder.HasMany(x => x.SpanEventAttributes).WithOne()
+            .HasForeignKey(x => x.SpanId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

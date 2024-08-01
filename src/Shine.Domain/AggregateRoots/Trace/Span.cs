@@ -57,7 +57,7 @@ public class Span : FullAggregateRoot
     public ICollection<SpanAttribute> SpanAttributes { get; private set; } = new List<SpanAttribute>();
 
     public ICollection<ResourceAttribute> ResourceAttributes { get; private set; } = new List<ResourceAttribute>();
-
+    
     public void SetSpanAttributes(IEnumerable<SpanAttribute> spanAttributes)
     {
         SpanAttributes.AddRange(spanAttributes);

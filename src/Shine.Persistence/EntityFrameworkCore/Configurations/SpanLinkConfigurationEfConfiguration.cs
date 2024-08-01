@@ -8,7 +8,7 @@ public class SpanLinkConfigurationEfConfiguration : IEntityTypeConfiguration<Spa
 {
     public void Configure(EntityTypeBuilder<SpanLink> builder)
     {
-        builder.ToTable("span_event");
+        builder.ToTable("span_link");
         builder.HasKey(e => e.Id);
         builder.Property(x => x.Id).HasColumnName("id");
         builder.Property(x => x.TraceId).HasColumnName("trace_id").IsRequired();
@@ -21,5 +21,8 @@ public class SpanLinkConfigurationEfConfiguration : IEntityTypeConfiguration<Spa
         builder.Property(x => x.CreationTime).HasColumnName("creation_time");
         builder.Property(x => x.LastModificationTime).HasColumnName("last_modification_time");
         builder.Property(x => x.DeletionTime).HasColumnName("deletion_time");
+        builder.HasMany(x => x.SpanLinkAttributes).WithOne()
+            .HasForeignKey(x => x.SpanId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

@@ -1,17 +1,33 @@
-using Luck.DDD.Domain.Domain.Entities;
+using Luck.DDD.Domain.Domain.AggregateRoots;
+using Luck.Framework.Extensions;
 
 namespace Shine.Domain.AggregateRoots.Trace;
 
-public class SpanEvent()
-    : FullEntity
+public class SpanEvent : FullAggregateRoot
 {
-    public required string TraceId { get; init; }
+    public SpanEvent(string traceId, string spanId, int index, string name, ulong timestampUnixNano)
+    {
+        TraceId = traceId;
+        SpanId = spanId;
+        Index = index;
+        Name = name;
+        TimestampUnixNano = timestampUnixNano;
+    }
 
-    public required string SpanId { get; init; }
+    public string TraceId { get; private set; }
 
-    public required  int Index { get; init; }
+    public string SpanId { get; private set; }
 
-    public required string Name { get; init; }
+    public int Index { get; private set; }
 
-    public required  ulong TimestampUnixNano { get; init; }
+    public string Name { get; private set; }
+
+    public ulong TimestampUnixNano { get; private set; }
+
+    public ICollection<SpanEventAttribute> SpanEventAttributes { get; private set; } = new List<SpanEventAttribute>();
+
+    public void SetSpanEventAttributes(IEnumerable<SpanEventAttribute> spanEventAttributes)
+    {
+        SpanEventAttributes.AddRange(spanEventAttributes);
+    }
 }

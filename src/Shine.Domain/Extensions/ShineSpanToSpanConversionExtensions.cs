@@ -7,13 +7,13 @@ internal static class ShineSpanToSpanConversionExtensions
 {
     internal static Span ToSpan(this ShineSpan shineSpan)
     {
-        var efSpan = new Span(shineSpan.TraceId, shineSpan.SpanId, shineSpan.SpanName, shineSpan.ParentSpanId,
+        var span = new Span(shineSpan.TraceId, shineSpan.SpanId, shineSpan.SpanName, shineSpan.ParentSpanId,
             shineSpan.StartTimeUnixNano, shineSpan.EndTimeUnixNano, shineSpan.DurationNanoseconds, shineSpan.StatusCode,
             shineSpan.StatusMessage, shineSpan.SpanKind, shineSpan.Resource.ServiceName,
             shineSpan.Resource.ServiceInstanceId, shineSpan.TraceFlags, shineSpan.TraceState);
-        efSpan.SetSpanAttributes(shineSpan.ToSpanAttributes());
-        efSpan.SetResourceAttributes(shineSpan.ToResourceAttributes());
-        return efSpan;
+        span.SetSpanAttributes(shineSpan.ToSpanAttributes());
+        span.SetResourceAttributes(shineSpan.ToResourceAttributes());
+        return span;
     }
 
     internal static IEnumerable<SpanAttribute> ToSpanAttributes(this ShineSpan shineSpan)
@@ -28,18 +28,13 @@ internal static class ShineSpanToSpanConversionExtensions
             new ResourceAttribute(shineSpan.TraceId, shineSpan.SpanId, a.Key, a.ValueType, a.Value));
     }
 
-    internal static SpanEvent ToSpanEvent(this ShineSpanEvent spanEvent, ShineSpan span, int spanEventIndex)
+    internal static SpanEvent ToSpanEvent(this ShineSpanEvent shineSpanEvent, ShineSpan span, int spanEventIndex)
     {
-        var efSpanEvent = new SpanEvent
-        {
-            TraceId = span.TraceId,
-            SpanId = span.SpanId,
-            Index = spanEventIndex,
-            Name = spanEvent.Name,
-            TimestampUnixNano = spanEvent.TimestampUnixNano
-        };
+        var spanEvent = new SpanEvent(span.TraceId, span.SpanId, spanEventIndex, shineSpanEvent.Name,
+            shineSpanEvent.TimestampUnixNano);
+        spanEvent.SetSpanEventAttributes(shineSpanEvent.ToSpanEventAttributes(spanEvent));
 
-        return efSpanEvent;
+        return spanEvent;
     }
 
     internal static IEnumerable<SpanEventAttribute> ToSpanEventAttributes(this ShineSpanEvent shineSpanEvent,
@@ -51,18 +46,10 @@ internal static class ShineSpanToSpanConversionExtensions
 
     internal static SpanLink ToSpanLink(this ShineSpanLink link, ShineSpan shineSpan, int spanLinkIndex)
     {
-        var efLink = new SpanLink
-        {
-            TraceId = shineSpan.TraceId,
-            SpanId = shineSpan.SpanId,
-            Index = spanLinkIndex,
-            LinkedTraceId = link.LinkedTraceId,
-            LinkedSpanId = link.LinkedSpanId,
-            LinkedTraceState = link.LinkedTraceState,
-            LinkedTraceFlags = link.LinkedTraceFlags
-        };
-
-        return efLink;
+        var spanLink = new SpanLink(shineSpan.TraceId, shineSpan.SpanId, spanLinkIndex, link.LinkedTraceId,
+            link.LinkedSpanId, link.LinkedTraceState, link.LinkedTraceFlags);
+        spanLink.SetSpanLinkAttributes(link.ToSpanLinkAttributes(spanLink));
+        return spanLink;
     }
 
     internal static IEnumerable<SpanLinkAttribute> ToSpanLinkAttributes(

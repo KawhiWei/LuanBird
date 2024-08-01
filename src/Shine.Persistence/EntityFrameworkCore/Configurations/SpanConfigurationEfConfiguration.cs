@@ -28,5 +28,12 @@ public class SpanConfigurationEfConfiguration : IEntityTypeConfiguration<Span>
         builder.Property(x => x.CreationTime).HasColumnName("creation_time");
         builder.Property(x => x.LastModificationTime).HasColumnName("last_modification_time");
         builder.Property(x => x.DeletionTime).HasColumnName("deletion_time");
+        builder.HasMany(x => x.ResourceAttributes).WithOne()
+            .HasForeignKey(x => x.SpanId)
+            .OnDelete(DeleteBehavior.Cascade);
+        builder.HasMany(x => x.SpanAttributes)
+            .WithOne()
+            .HasForeignKey(x => x.SpanId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
