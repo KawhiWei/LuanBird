@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A13FEAE8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Persistence.Tests", "tests\Shine.Persistence.Tests\Shine.Persistence.Tests.csproj", "{993CEAE2-CF10-4301-8F55-1CB273BC1607}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Query", "src\Shine.Query\Shine.Query.csproj", "{7357043C-84D4-40AC-8B5D-831FD40C3A04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,7 @@ Global
 		{640ED676-BB90-42AD-AFB8-61CAB7C530C5} = {CC71A88B-FB1E-409F-8106-DB75D6B40B87}
 		{C6791E36-818B-4B57-BD53-57BD71997ED7} = {CC71A88B-FB1E-409F-8106-DB75D6B40B87}
 		{993CEAE2-CF10-4301-8F55-1CB273BC1607} = {A13FEAE8-D422-4570-AD04-C8C67C6A7CB9}
+		{7357043C-84D4-40AC-8B5D-831FD40C3A04} = {CC71A88B-FB1E-409F-8106-DB75D6B40B87}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5899E516-B7AF-4FCD-9F78-230DEF3774BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -83,5 +86,9 @@ Global
 		{993CEAE2-CF10-4301-8F55-1CB273BC1607}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{993CEAE2-CF10-4301-8F55-1CB273BC1607}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{993CEAE2-CF10-4301-8F55-1CB273BC1607}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7357043C-84D4-40AC-8B5D-831FD40C3A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7357043C-84D4-40AC-8B5D-831FD40C3A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7357043C-84D4-40AC-8B5D-831FD40C3A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7357043C-84D4-40AC-8B5D-831FD40C3A04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
