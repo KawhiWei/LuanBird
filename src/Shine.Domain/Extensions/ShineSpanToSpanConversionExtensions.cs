@@ -11,21 +11,21 @@ internal static class ShineSpanToSpanConversionExtensions
             shineSpan.StartTimeUnixNano, shineSpan.EndTimeUnixNano, shineSpan.DurationNanoseconds, shineSpan.StatusCode,
             shineSpan.StatusMessage, shineSpan.SpanKind, shineSpan.Resource.ServiceName,
             shineSpan.Resource.ServiceInstanceId, shineSpan.TraceFlags, shineSpan.TraceState);
-        span.SetSpanAttributes(shineSpan.ToSpanAttributes());
-        span.SetResourceAttributes(shineSpan.ToResourceAttributes());
+        span.SetSpanAttributes(shineSpan.ToSpanAttributes(span.Id));
+        span.SetResourceAttributes(shineSpan.ToResourceAttributes(span.Id));
         return span;
     }
 
-    internal static IEnumerable<SpanAttribute> ToSpanAttributes(this ShineSpan shineSpan)
+    internal static IEnumerable<SpanAttribute> ToSpanAttributes(this ShineSpan shineSpan, string shineSpanId)
     {
         return shineSpan.Attributes.Select(a =>
-            new SpanAttribute(shineSpan.TraceId, shineSpan.SpanId, a.Key, a.ValueType, a.Value));
+            new SpanAttribute(shineSpan.TraceId, shineSpan.SpanId, a.Key, a.ValueType, a.Value, shineSpanId));
     }
 
-    internal static IEnumerable<ResourceAttribute> ToResourceAttributes(this ShineSpan shineSpan)
+    internal static IEnumerable<ResourceAttribute> ToResourceAttributes(this ShineSpan shineSpan, string shineSpanId)
     {
         return shineSpan.Resource.Attributes.Select(a =>
-            new ResourceAttribute(shineSpan.TraceId, shineSpan.SpanId, a.Key, a.ValueType, a.Value));
+            new ResourceAttribute(shineSpan.TraceId, shineSpan.SpanId, a.Key, a.ValueType, a.Value, shineSpanId));
     }
 
     internal static SpanEvent ToSpanEvent(this ShineSpanEvent shineSpanEvent, ShineSpan span, int spanEventIndex)

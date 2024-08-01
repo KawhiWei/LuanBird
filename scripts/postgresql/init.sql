@@ -39,6 +39,7 @@ CREATE INDEX idx_shine_monitoring_span_trace_id on span (trace_id);
 CREATE TABLE IF NOT EXISTS span_attribute
 (
     id VARCHAR(50) NOT NULL PRIMARY KEY,
+    shine_span_id VARCHAR(255) NOT NULL,
     trace_id VARCHAR(255) NOT NULL,
     span_id VARCHAR(255) NOT NULL,
     key VARCHAR(255) NOT NULL,
@@ -58,6 +59,7 @@ CREATE INDEX idx_shine_monitoring_span_attribute_trace_id on span_attribute (tra
 CREATE TABLE IF NOT EXISTS resource_attribute
 (
     id VARCHAR(50) NOT NULL PRIMARY KEY,
+    shine_span_id VARCHAR(255) NOT NULL,
     trace_id VARCHAR(255) NOT NULL,
     span_id VARCHAR(255) NOT NULL,
     key VARCHAR(255) NOT NULL,
