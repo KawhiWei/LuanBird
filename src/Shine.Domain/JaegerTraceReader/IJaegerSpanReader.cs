@@ -1,6 +1,6 @@
 using Shine.Dto;
 
-namespace Shine.Domain.SpanWriter;
+namespace Shine.Domain.JaegerTraceReader;
 
 public interface IJaegerSpanReader
 {

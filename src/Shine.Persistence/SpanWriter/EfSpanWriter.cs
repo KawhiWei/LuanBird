@@ -1,10 +1,11 @@
 using Luck.DDD.Domain.Repositories;
 using Luck.Framework.UnitOfWorks;
 using Shine.Domain.AggregateRoots.Trace;
-using Shine.Domain.Extensions;
+using Shine.Domain.SpanWriter;
 using Shine.Dto;
+using Shine.Domain.Extensions;
 
-namespace Shine.Domain.SpanWriter;
+namespace Shine.Persistence.SpanWriter;
 
 public class EfSpanWriter : ISpanWriter
 {

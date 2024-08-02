@@ -11,6 +11,7 @@
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Shine.Domain\Shine.Domain.csproj" />
+      <ProjectReference Include="..\Shine.Infrastructure\Shine.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

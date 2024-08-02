@@ -5,6 +5,7 @@ using Shine.Domain.Shared.Enums;
 using Shine.Domain.SpanWriter;
 using Shine.Dto;
 using Shine.Infrastructure.Extensions;
+using Shine.Persistence.SpanWriter;
 
 namespace Shine.Persistence.Tests.EntityFrameworkCore;
 
