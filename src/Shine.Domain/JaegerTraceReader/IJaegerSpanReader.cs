@@ -2,7 +2,7 @@ using Shine.Dto;
 
 namespace Shine.Domain.JaegerTraceReader;
 
-public interface IJaegerSpanReader
+public interface IJaegerSpanReader 
 {
     Task<IEnumerable<string>> GetServicesAsync();
 
