@@ -16,13 +16,13 @@ public static class ShineSpanToSpanConversionExtensions
         return span;
     }
 
-    public static IEnumerable<SpanAttribute> ToSpanAttributes(this ShineSpan shineSpan, string shineSpanId)
+    private static IEnumerable<SpanAttribute> ToSpanAttributes(this ShineSpan shineSpan, string shineSpanId)
     {
         return shineSpan.Attributes.Select(a =>
             new SpanAttribute(shineSpan.TraceId, shineSpan.SpanId, a.Key, a.ValueType, a.Value, shineSpanId));
     }
 
-    public static IEnumerable<ResourceAttribute> ToResourceAttributes(this ShineSpan shineSpan, string shineSpanId)
+    private static IEnumerable<ResourceAttribute> ToResourceAttributes(this ShineSpan shineSpan, string shineSpanId)
     {
         return shineSpan.Resource.Attributes.Select(a =>
             new ResourceAttribute(shineSpan.TraceId, shineSpan.SpanId, a.Key, a.ValueType, a.Value, shineSpanId));
@@ -37,7 +37,7 @@ public static class ShineSpanToSpanConversionExtensions
         return spanEvent;
     }
 
-    public static IEnumerable<SpanEventAttribute> ToSpanEventAttributes(this ShineSpanEvent shineSpanEvent,
+    private static IEnumerable<SpanEventAttribute> ToSpanEventAttributes(this ShineSpanEvent shineSpanEvent,
         SpanEvent spanEvent)
     {
         return shineSpanEvent.Attributes.Select(a => new
@@ -52,7 +52,7 @@ public static class ShineSpanToSpanConversionExtensions
         return spanLink;
     }
 
-    public static IEnumerable<SpanLinkAttribute> ToSpanLinkAttributes(
+    private static IEnumerable<SpanLinkAttribute> ToSpanLinkAttributes(
         this ShineSpanLink shineSpanLink,
         SpanLink spanLink)
     {

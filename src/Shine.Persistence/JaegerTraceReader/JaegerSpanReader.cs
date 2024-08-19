@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Shine.Domain.AggregateRoots.Trace;
 using Shine.Domain.JaegerTraceReader;
 using Shine.Dto;
+using Shine.Persistence.Extensions;
 
 namespace Shine.Persistence.JaegerTraceReader;
 
