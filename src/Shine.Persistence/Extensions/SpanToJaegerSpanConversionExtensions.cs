@@ -50,7 +50,7 @@ internal static class SpanToJaegerSpanConversionExtensions
         }
 
         var jaegerTraces = jaegerSpans
-            .GroupBy(s => s.TraceId)
+            .GroupBy(s => s.TraceID)
             .Select(g =>
             {
                 var spansOfCurrentTrace = g.ToArray();
@@ -58,11 +58,11 @@ internal static class SpanToJaegerSpanConversionExtensions
 
                 foreach (var span in spansOfCurrentTrace)
                 {
-                    resourceAttributesBySpanId.TryGetValue(span.TraceId, out var attributes);
+                    resourceAttributesBySpanId.TryGetValue(span.TraceID, out var attributes);
                     attributes ??= Array.Empty<ResourceAttribute>();
                     var process = new JaegerProcessOutputDto
                     {
-                        ProcessId = span.ProcessId,
+                        ProcessId = span.ProcessID,
                         ServiceName = attributes
                             .FirstOrDefault(a => a.Key == "service.name")?.Value ?? string.Empty,
                         Tags = Array.ConvertAll(attributes, ToJaegerTag)
@@ -73,7 +73,7 @@ internal static class SpanToJaegerSpanConversionExtensions
 
                 return new JaegerTraceOutputDto
                 {
-                    TraceId = g.Key,
+                    TraceID = g.Key,
                     Processes = jaegerProcesses
                         .DistinctBy(p => p.ProcessId)
                         .ToDictionary(p => p.ProcessId),
@@ -94,13 +94,13 @@ internal static class SpanToJaegerSpanConversionExtensions
         {
             var jaegerSpan = new JaegerSpanOutputDto
             {
-                TraceId = span.TraceId,
-                SpanId = span.SpanId,
+                TraceID = span.TraceId,
+                SpanID = span.SpanId,
                 OperationName = span.SpanName,
                 Flags = span.TraceFlags, // TODO: is this correct?
                 StartTime = span.StartTimeUnixNano / 1000,
                 Duration = span.DurationNanoseconds / 1000,
-                ProcessId = span.ServiceInstanceId,
+                ProcessID = span.ServiceInstanceId,
                 References = string.IsNullOrWhiteSpace(span.ParentSpanId) // TODO: should we use span links?
                     ? Array.Empty<JaegerSpanReferenceOutputDto>()
                     :

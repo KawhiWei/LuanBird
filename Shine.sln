@@ -31,6 +31,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Persistence.Tests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shine.Query", "src\Shine.Query\Shine.Query.csproj", "{7357043C-84D4-40AC-8B5D-831FD40C3A04}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{592CF5A9-A711-4D2F-8D44-EAEF2ECA9875}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "query", "query", "{CC4097DE-FC8C-4CBF-9759-31CCB972683B}"
+	ProjectSection(SolutionItems) = preProject
+		docker\query\Dockerfile = docker\query\Dockerfile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +55,7 @@ Global
 		{C6791E36-818B-4B57-BD53-57BD71997ED7} = {CC71A88B-FB1E-409F-8106-DB75D6B40B87}
 		{993CEAE2-CF10-4301-8F55-1CB273BC1607} = {A13FEAE8-D422-4570-AD04-C8C67C6A7CB9}
 		{7357043C-84D4-40AC-8B5D-831FD40C3A04} = {CC71A88B-FB1E-409F-8106-DB75D6B40B87}
+		{CC4097DE-FC8C-4CBF-9759-31CCB972683B} = {592CF5A9-A711-4D2F-8D44-EAEF2ECA9875}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5899E516-B7AF-4FCD-9F78-230DEF3774BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

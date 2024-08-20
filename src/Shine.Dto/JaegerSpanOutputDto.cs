@@ -2,9 +2,9 @@ namespace Shine.Dto;
 
 public class JaegerSpanOutputDto
 {
-    public required string TraceId { get; init; }
+    public required string TraceID { get; init; }
 
-    public required string SpanId { get; init; }
+    public required string SpanID { get; init; }
 
     public required string OperationName { get; init; }
 
@@ -14,7 +14,7 @@ public class JaegerSpanOutputDto
 
     public ulong Duration { get; init; }
 
-    public required string ProcessId { get; init; }
+    public required string ProcessID { get; init; }
 
     public required JaegerSpanReferenceOutputDto[] References { get; init; }
 
